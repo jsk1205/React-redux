@@ -1,31 +1,29 @@
 import React, { Component } from 'react'
 //引入store
 import store from '../../redux/store'
-//action
-import {createIncrement,createDecrement} from '../../redux/countActionReducer'
 
 export default class Count extends Component {
   
   increment=()=>{
     const {value}=this.refs.user_selectd
     //通知redux 没有所谓的'服务员',我们可以自己写
-    store.dispatch(createIncrement(value*1))
+    store.dispatch({type:'increment',data:value*1})
   }
   decrement=()=>{
     const {value}=this.refs.user_selectd
-    store.dispatch(createDecrement(value*1))
+    store.dispatch({type:'decrement',data:value*1})
   }
   incrementIfOdd=()=>{
     const {value}=this.refs.user_selectd
     let count = store.getState()
     if(count %2 ===1){
-      store.dispatch(createIncrement(value*1))
+      store.dispatch({type:'increment',data:value*1})
     }
   }
   incrementAsync=()=>{
     const {value}=this.refs.user_selectd
     setTimeout(()=>{
-			store.dispatch(createIncrement(value*1))
+			store.dispatch({type:'increment',data:value*1})
 		},500)
   }
   render() {

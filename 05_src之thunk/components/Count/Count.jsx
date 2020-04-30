@@ -33,10 +33,9 @@ export default class Count extends Component {
 		// },500)
   }
   render() {
-    const {count,personCount} = this.props
     return (
       <div>
-        <h1>当前求和为:{count},下方组件的总人数为:{personCount}</h1>
+        <h1>当前求和为:{this.props.count}</h1>
         <select ref="user_selectd">
           <option value="1">1</option> 
           <option value="2">2</option> 

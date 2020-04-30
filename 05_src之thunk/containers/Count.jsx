@@ -20,9 +20,6 @@ import { increment,decrement,incrementAsync } from "../redux/actions/count"
 
 //精简版
 export default connect(
-  state=>({//映射状态, state是redux中保存的{总}状态
-    count:state.number,
-		personCount:state.persons.length
-  }),//映射状态
+  state=>({count:state}),//映射状态
   {increment,decrement,incrementAsync}
 )(Count)

@@ -4,8 +4,8 @@
 import { ADD_PERSON } from "../actionType";
 let initState=[
   {id:'01',name:'小轲',age:18},
-  {id:'01',name:'大美',age:20},
-  {id:'01',name:'蛋蛋',age:19}
+  {id:'02',name:'大美',age:20},
+  {id:'03',name:'蛋蛋',age:19}
 ]
 //传Reducers所需要的previousState,action
 export default function (preState=initState,action) {

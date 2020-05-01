@@ -1,7 +1,14 @@
+//容器组件
 import React,{Component} from 'react'
+//引入connect方法(重点)
+import { connect } from 'react-redux' 
+// 引入person的action
+import {addPerson} from "../redux/actions/person"
+
+
 import {v4 as uuidv4} from 'uuid'
 
-export default class Person extends Component{
+class Person extends Component{
   add=()=>{
     const {nameNode,ageNode}=this.refs
     if (!nameNode.value||!ageNode.value) {
@@ -17,10 +24,10 @@ export default class Person extends Component{
     ageNode.value = ''
   }
   render (){
-    const {persons,count}=this.props
+    const {persons,counts}=this.props
     return(
       <div>
-        <h1>当前总人数为:{persons.length},上方组件求和为:{count}</h1>
+        <h1>当前总人数为:{persons.length},上方组件求和为:{counts}</h1>
         <input type="text" placeholder="输入名字" ref='nameNode'/>&nbsp;
         <input type="text" placeholder="输入年龄" ref='ageNode'/>&nbsp;
         <button onClick={this.add}>添加</button>
@@ -39,3 +46,15 @@ export default class Person extends Component{
     )
   }
 }
+
+
+//精简版
+export default connect(
+  state=>({
+    persons:state.persons,
+    counts:state.number
+  }),//映射状态
+  {
+    addPerson
+  }
+)(Person)

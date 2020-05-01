@@ -1,6 +1,6 @@
 //容器组件
 //引入UI组件
-import Count from '../components/Count/Count'
+import Count from '../components/Count'
 //引入connect方法(重点)
 import { connect } from 'react-redux' 
 // 引入action

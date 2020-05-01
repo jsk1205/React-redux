@@ -10,7 +10,7 @@ import {addPerson} from "../redux/actions/person"
 export default connect(
   state=>({
     persons:state.persons,
-    count:state.number
+    counts:state.number
   }),//映射状态
   {
     addPerson

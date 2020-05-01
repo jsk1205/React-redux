@@ -1,7 +1,6 @@
 //为person服务的renducer即 真正操作状态的人
 //并Reducers加工完状态给store了
 //Reducers本质是一个函数
-//特别注意reducer是一个纯函数
 import { ADD_PERSON } from "../actionType";
 let initState=[
   {id:'01',name:'小轲',age:18},

@@ -17,10 +17,10 @@ export default class Person extends Component{
     ageNode.value = ''
   }
   render (){
-    const {persons,count}=this.props
+    const {persons,counts}=this.props
     return(
       <div>
-        <h1>当前总人数为:{persons.length},上方组件求和为:{count}</h1>
+        <h1>当前总人数为:{persons.length},上方组件求和为:{counts}</h1>
         <input type="text" placeholder="输入名字" ref='nameNode'/>&nbsp;
         <input type="text" placeholder="输入年龄" ref='ageNode'/>&nbsp;
         <button onClick={this.add}>添加</button>

@@ -50,6 +50,7 @@ class Person extends Component{
 
 //精简版
 export default connect(
+
   state=>({
     persons:state.persons,
     counts:state.number
@@ -57,4 +58,5 @@ export default connect(
   {
     addPerson
   }
+  
 )(Person)

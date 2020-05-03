@@ -6,4 +6,5 @@ import { createStore,applyMiddleware } from 'redux'
 import allReducer from './reducers'
 //引入 redux-thunk 用于支持异步action --中间架,然后还需要applyMiddleware
 import thunk from 'redux-thunk'
+
 export default createStore(allReducer,applyMiddleware(thunk))

@@ -1,8 +1,4 @@
-//总的 reducer
-import count from './count'
-import personReducer from './person'
-import {combineReducers} from 'redux'
-export  default combineReducers({//总的
-  number:count,
-  persons:personReducer
-})
+import {ADD_PERSON} from '../actionType'
+
+//创建添加一个人的action ---- 对象式action ---- 同步action
+export const addPerson = personObj => ({type:ADD_PERSON,data:personObj})
